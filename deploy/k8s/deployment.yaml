@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dmadforge
+  labels:
+    app: dmadforge
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dmadforge
+  template:
+    metadata:
+      labels:
+        app: dmadforge
+    spec:
+      containers:
+        - name: dmadforge
+          image: dmadforge:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8765
+          resources:
+            requests:
+              cpu: "250m"
+              memory: "256Mi"
+            limits:
+              cpu: "1"
+              memory: "1Gi"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: dmadforge
+spec:
+  selector:
+    app: dmadforge
+  ports:
+    - port: 8765
+      targetPort: 8765
+  type: ClusterIP

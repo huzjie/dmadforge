@@ -1,0 +1,28 @@
+# dmadforge default configuration
+model:
+  dim: 64
+  latent_dim: 4
+  audio_dim: 4
+  frame_size: 16
+  n_frames: 4
+  teacher_steps: 50
+  student_steps: 4
+  lora_rank: 128
+
+backend:
+  name: mock
+  temperature: 1.0
+  max_tokens: 256
+
+distillation:
+  adv_weight: 1.0
+  mmd_weight: 0.5
+  recon_weight: 0.5
+  mmd_sigma: 1.0
+  gp_weight: 10.0
+
+train:
+  epochs: 20
+  lr: 0.05
+  skill_start: 0.5
+  batch_size: 8

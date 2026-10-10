@@ -1,0 +1,9 @@
+# 低秩配方（内存敏感）
+model:
+  teacher_steps: 50
+  student_steps: 4
+  lora_rank: 64
+distillation:
+  adv_weight: 1.0
+  mmd_weight: 0.5
+  recon_weight: 0.5

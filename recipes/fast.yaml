@@ -1,0 +1,9 @@
+# 极速配方（2 步 + rank 32）
+model:
+  teacher_steps: 50
+  student_steps: 2
+  lora_rank: 32
+distillation:
+  adv_weight: 1.0
+  mmd_weight: 0.25
+  recon_weight: 0.25

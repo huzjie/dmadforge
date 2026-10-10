@@ -1,0 +1,6 @@
+apiVersion: v2
+name: dmadforge
+description: DMAD few-step audio-video distillation framework
+type: application
+version: 1.0.0
+appVersion: "1.0.0"

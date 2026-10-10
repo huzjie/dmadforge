@@ -1,0 +1,9 @@
+# 4 步配方（激进压缩）
+model:
+  teacher_steps: 50
+  student_steps: 4
+  lora_rank: 128
+distillation:
+  adv_weight: 1.0
+  mmd_weight: 0.5
+  recon_weight: 0.5

@@ -1,0 +1,9 @@
+version: "3.9"
+services:
+  dmadforge:
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile
+    ports:
+      - "8765:8765"
+    restart: unless-stopped
